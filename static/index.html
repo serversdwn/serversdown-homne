@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Nexus</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Home Nexus</h1>
+      <p>Your shared space for staying connected and organized.</p>
+    </header>
+
+    <main>
+      <section id="messages" class="card">
+        <div class="card-header">
+          <h2>Message Board</h2>
+          <p>Share sweet notes or quick updates.</p>
+        </div>
+        <form id="message-form" class="form-inline">
+          <input type="text" id="message-author" placeholder="Your name" required />
+          <input
+            type="text"
+            id="message-content"
+            placeholder="Leave a message"
+            required
+          />
+          <button type="submit">Post</button>
+        </form>
+        <ul id="message-list" class="item-list"></ul>
+      </section>
+
+      <section id="posts" class="card">
+        <div class="card-header">
+          <h2>Shared Moments</h2>
+          <p>Capture highlights, memories, or longer updates.</p>
+        </div>
+        <form id="post-form">
+          <input type="text" id="post-title" placeholder="Title" required />
+          <textarea id="post-body" rows="3" placeholder="What's new?" required></textarea>
+          <button type="submit">Share</button>
+        </form>
+        <ul id="post-list" class="item-list"></ul>
+      </section>
+
+      <section id="todos" class="card">
+        <div class="card-header">
+          <h2>To-Do List</h2>
+          <p>Track personal or shared tasks.</p>
+        </div>
+        <form id="todo-form" class="form-inline">
+          <input type="text" id="todo-description" placeholder="Add a task" required />
+          <button type="submit">Add</button>
+        </form>
+        <ul id="todo-list" class="item-list"></ul>
+      </section>
+
+      <section id="groceries" class="card">
+        <div class="card-header">
+          <h2>Grocery List</h2>
+          <p>Keep your pantry stocked together.</p>
+        </div>
+        <form id="grocery-form" class="form-inline">
+          <input type="text" id="grocery-name" placeholder="Item" required />
+          <input type="text" id="grocery-quantity" placeholder="Quantity" value="1" />
+          <button type="submit">Add</button>
+        </form>
+        <ul id="grocery-list" class="item-list"></ul>
+      </section>
+
+      <section id="pantry" class="card">
+        <div class="card-header">
+          <h2>Pantry & Fridge</h2>
+          <p>Track ingredients manually or let AI do the sorting.</p>
+        </div>
+        <form id="ingredient-form" class="form-inline">
+          <input type="text" id="ingredient-name" placeholder="Ingredient" required />
+          <input type="text" id="ingredient-amount" placeholder="Amount" />
+          <input type="text" id="ingredient-location" placeholder="Location" />
+          <button type="submit">Add</button>
+        </form>
+        <div class="upload-area">
+          <h3>Recognize from Photo</h3>
+          <p>
+            Snap the fridge or pantry, upload the image, and let AI suggest what it sees.
+          </p>
+          <form id="recognition-form">
+            <input type="file" id="recognition-image" accept="image/*" required />
+            <button type="submit">Analyze</button>
+          </form>
+          <p id="recognition-status" class="status"></p>
+        </div>
+        <ul id="ingredient-list" class="item-list"></ul>
+      </section>
+    </main>
+
+    <template id="item-template">
+      <li class="list-item">
+        <div class="item-content"></div>
+        <div class="item-actions"></div>
+      </li>
+    </template>
+
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
