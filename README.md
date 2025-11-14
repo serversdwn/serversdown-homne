@@ -37,6 +37,32 @@ uvicorn app.main:app --reload --port 8000
 
 Visit [http://localhost:8000](http://localhost:8000) to open the interface.
 
+## Using the app
+
+Once the server is running, open the site on your phone or desktop browser.
+
+1. **Add it to your iPhone home screen (optional):** In Safari tap the share
+   button → “Add to Home Screen.” This creates an icon that launches Home Nexus
+   like a native app.
+2. **Sign in:** There is no authentication yet—the app opens directly into your
+   shared hub. Leave the tab open or add the shortcut so both of you can access
+   it quickly.
+3. **Leave a message:** Use the “Messages” card, type your note, and press
+   **Post Message**. Messages appear instantly for both of you.
+4. **Share a moment:** In “Shared Moments,” write a longer update and click
+   **Add Moment** to store it.
+5. **Track to-dos:** Enter a task in “To-dos,” click **Add Task**, and tap the
+   checkbox when it is done. Use the trash icon to remove finished items.
+6. **Manage groceries:** Add a title under “Groceries,” submit with
+   **Add Item**, and mark items purchased by toggling the checkbox.
+7. **Record pantry ingredients:** Add ingredients manually in the “Pantry”
+   section or tap **Upload Photo** to send a fridge snapshot for AI recognition.
+8. **Refresh data:** The interface polls the server every few seconds so changes
+   made from one device appear on the others automatically.
+
+All data is stored locally in `data.db`. If you want a fresh start, stop the
+server, delete that file, and restart it to recreate an empty database.
+
 ### Configuring AI ingredient recognition
 
 The `/api/pantry/recognize` endpoint uploads an image and forwards it to an OpenAI
